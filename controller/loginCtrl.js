@@ -14,9 +14,14 @@ const login =async(req,res) => {
         };
         const accesstoken  = createAccessToken({id:user._id})
         const refreshtoken = createRefreshToken({id:user._id})
+
+const isProduction = process.env.NODE_ENV === 'production'
+
         res.cookie('refreshtoken',refreshtoken,{
             httpOnly:true,
+            secure: isProduction,
             path:'/user/refresh_token',
+            sameSite :'Strict',
         });
         res.json({accesstoken})
     }  catch (err){
