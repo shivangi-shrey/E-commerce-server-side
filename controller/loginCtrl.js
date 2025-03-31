@@ -15,7 +15,8 @@ const login =async(req,res) => {
         const accesstoken  = createAccessToken({id:user._id})
         const refreshtoken = createRefreshToken({id:user._id})
 
-const isProduction = process.env.NODE_ENV === 'production'
+const isProduction = process.env.NODE_ENV === 'production' // addproduction code
+
 
         res.cookie('refreshtoken',refreshtoken,{
             httpOnly:true,
