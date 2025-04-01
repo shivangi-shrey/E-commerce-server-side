@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // Allowed Origins for CORS - Make sure this matches your frontend origin
-const allowedOrigins = ['http://localhost:5173', 'https://yourfrontendurl.com']; // Add your production URL here
+const allowedOrigins = ['http://localhost:5173', 'https://modern-shop-shivangi.netlify.app']; // Add your production URL here
 
 const corsOptions = {
   origin: function (origin, callback) {
